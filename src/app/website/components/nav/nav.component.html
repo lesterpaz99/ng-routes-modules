@@ -3,7 +3,7 @@
     <button (click)="toggleMenu()">
       <img src="./assets/svg/icon_menu.svg" alt="menu">
     </button>
-    <a href="">
+    <a routerLink="home">
       <img src="./assets/svg/logo_yard_sale.svg" alt="logo">
     </a>
     <div class="cart">
@@ -17,22 +17,28 @@
   <div class="side-menu" [class.active]="activeMenu">
     <button (click)="toggleMenu()">Close</button>
     <ul>
-      <li><a href="">All</a></li>
-      <li><a href="">Clothes</a></li>
-      <li><a href="">Electronics</a></li>
+      <li>
+        <a routerLink="home" routerLinkActive="active">All</a>
+      </li>
+      <li *ngFor="let category of categories">
+        <a [routerLink]="['category/', category.id]" routerLinkActive="active">{{ category.name }}</a>
+      </li>
     </ul>
   </div>
 </div>
 <div class="hide-mobile">
   <div>
     <nav>
-      <a class="logo" href="">
+      <a class="logo" routerLink="home">
         <img src="./assets/svg/logo_yard_sale.svg" alt="logo">
       </a>
       <ul>
-        <li><a href="">All</a></li>
-        <li><a href="">Clothes</a></li>
-        <li><a href="">Electronics</a></li>
+        <li>
+          <a routerLink="home" routerLinkActive="active">All</a>
+        </li>
+        <li *ngFor="let category of categories">
+          <a [routerLink]="['category/', category.id]" routerLinkActive="active" >{{ category.name }}</a>
+        </li>
       </ul>
     </nav>
     <div class="info">

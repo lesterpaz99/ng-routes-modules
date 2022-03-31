@@ -1,0 +1,22 @@
+div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    place-content: center;
+    z-index: -1;
+
+    h2 {
+        text-align: center;
+        margin: 2rem;
+        font-weight: bolder;
+        font-size: 3rem;
+    }
+
+    img {
+        aspect-ratio: 16 / 9;
+        border-radius: 18px;
+    }
+}

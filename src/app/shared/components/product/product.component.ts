@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { Product } from '../../models/product.model';
+import { Product } from '../../../models/product.model';
 
 @Component({
   selector: 'app-product',
@@ -31,6 +31,10 @@ export class ProductComponent {
 
   onShowDetail() {
     this.showProduct.emit(this.product.id);
+  }
+
+  onOpenDetail(e: Event) {
+    e.stopPropagation();
   }
 
 }
